@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeloVisa - Asesoría Migratoria Especializada</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #dd0000;
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light);
+            padding: 80px 0;
+        }
+
+        .about-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .about-content {
+            margin-bottom: 40px;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .about p {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .stats {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            flex-grow: 1;
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+
+        .stat-text {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .about-image {
+            background-color: #ddd;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 400px;
+            position: relative;
+        }
+
+        .about-image-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--gray);
+        }
+
+        .about-image-placeholder i {
+            font-size: 3rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .section-header p {
+            color: var(--dark-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            color: var(--secondary);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .service-card p {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+
+        .service-link {
+            color: var(--secondary);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .service-link i {
+            margin-left: 5px;
+            font-size: 0.7rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .testimonial-author img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 3px solid var(--secondary);
+        }
+
+        .testimonial-author h4 {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .testimonial-author span {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* CTA Section */
+        .cta {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 80px 0;
+        }
+
+        .cta-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cta-content {
+            margin-bottom: 40px;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .cta p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+        }
+
+        .cta-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .cta-form {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 5px;
+            color: var(--dark);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-form h3 {
+            text-align: center;
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--accent);
+        }
+
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media Queries para responsividad */
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .about-container {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .about-content {
+                width: 50%;
+                padding-right: 40px;
+                margin-bottom: 0;
+            }
+
+            .about-image {
+                width: 50%;
+            }
+
+            .cta-container {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .cta-content {
+                width: 50%;
+                padding-right: 40px;
+                margin-bottom: 0;
+            }
+
+            .cta-form {
+                width: 50%;
+            }
+
+            .cta-btns {
+                flex-direction: row;
+            }
+
+            .nav-links {
+                display: flex;
+                align-items: center;
+            }
+
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .hero {
+                padding: 150px 0;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">Felo<span>Visa</span></a>
+
+            <div class="nav-links">
+                <a href="#">Inicio</a>
+                <a href="pages/location.html">Ubicación</a>
+                <a href="#">Nuestro Equipo</a>
+                <a href="pages/contact.html" class="contact-btn">Contacto</a>
+            </div>
+
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Tu futuro migratorio en las manos correctas</h1>
+            <p>Asesoría legal especializada y personalizada para todos tus trámites migratorios</p>
+            <div class="hero-btns">
+                <a href="#" class="btn-primary">Agendar consulta gratuita</a>
+                <a href="#services" class="btn-secondary">Nuestros servicios</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container about-container">
+            <div class="about-content">
+                <h2>Más de 15 años guiando sueños</h2>
+                <p>En FeloVisa nos especializamos en facilitar tu transición migratoria. Nuestro equipo de abogados
+                    certificados ha ayudado a más de 1,200 familias y profesionales a regularizar su situación en el
+                    país.
+                </p>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-text">Años de experiencia</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-text">Casos Exitosos</div>
+                    </div>
+                    <a href="#" class="btn btn-primary">Conoce nuestro equipo <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="about-image">
+                <div class="about-image-placeholder">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+            </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestros Servicios</h2>
+                <p>Ofrecemos soluciones completas para todas tus necesidades migratorias</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h3>Residencia Permanente</h3>
+                    <p>Te acompañamos en todo el proceso para obtener tu residencia permanente con los documentos
+                        correctos.</p>
+                    <a href="#" class="service-link">Más información <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Visa de Trabajo</h3>
+                    <p>Gestión completa de visas laborales para que puedas trabajar legalmente en el país de destino.
+                    </p>
+                    <a href="#" class="service-link">Más información <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Reunificación Familiar</h3>
+                    <p>Ayudamos a familias a reunirse mediante los procesos legales de reagrupación familiar.</p>
+                    <a href="#" class="service-link">Más información <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Lo que dicen nuestros clientes</h2>
+                <p>Historias de éxito y la confianza que nuestros clientes han depositado en nosotros.</p>
+            </div>
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <p>"Gracias a MigraPlus, mi proceso de residencia fue mucho más sencillo de lo que imaginaba. Su
+                        equipo es muy profesional y atento."</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/70/3498db/ffffff?text=JD" alt="Foto de Juan Pérez">
+                        <h4>Juan Pérez</h4>
+                        <span>Residencia Permanente</span>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <p>"Obtener mi visa de trabajo parecía imposible, pero MigraPlus me guió en cada paso. ¡Altamente
+                        recomendados!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/70/2ecc71/ffffff?text=MA" alt="Foto de María García">
+                        <h4>María García</h4>
+                        <span>Visa de Trabajo</span>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <p>"La reunificación familiar es un sueño hecho realidad. El apoyo de MigraPlus fue fundamental para
+                        que mi familia pudiera estar junta."</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/70/e67e22/ffffff?text=RL" alt="Foto de Roberto López">
+                        <h4>Roberto López</h4>
+                        <span>Reunificación Familiar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container cta-container">
+            <div class="cta-content">
+                <h2>¿Listo para comenzar tu proceso migratorio?</h2>
+                <p>No dejes tu futuro al azar. Agenda una consulta gratuita con nuestros especialistas hoy mismo.</p>
+                <div class="cta-btns">
+                    <a href="#" class="btn-primary">Agendar cita</a>
+                    <a href="#" class="btn-secondary">WhatsApp <i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="cta-form">
+                <h3>Consulta rápida</h3>
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre completo">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Correo electrónico">
+                    </div>
+                    <div class="form-group">
+                        <select>
+                            <option disabled selected>Servicio de interés</option>
+                            <option>Residencia permanente</option>
+                            <option>Visa de trabajo</option>
+                            <option>Reunión familiar</option>
+                            <option>Ciudadanía</option>
+                            <option>Otro</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar consulta</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">Felo<span>Visa</span></a>
+                    <p>Expertos en asesoría migratoria y gestión legal internacional.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="footer-heading">Servicios</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Residencia permanente</a></li>
+                        <li><a href="#">Visas de trabajo</a></li>
+                        <li><a href="#">Reunificación familiar</a></li>
+                        <li><a href="#">Ciudadanía</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer-heading">Enlaces útiles</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Documentación requerida</a></li>
+                        <li><a href="#">Testimonios</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer-heading">Contacto</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Av. República de Colombia No. 48, esq. Av. Jacobo
+                            Majluta</li>
+                        <li><i class="fas fa-phone-alt"></i> +1 (809) 355-9393</li>
+                        <li><i class="fas fa-envelope"></i> felovisa@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 FeloVisa. Todos los derechos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Términos de servicio</a>
+                    <a href="#">Política de privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- <script>
+        // Menú móvil
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            // Esta función manejadora estaría vacía ya que estamos haciendo una demostración estática
+            // En una implementación real aquí iría la lógica para mostrar/ocultar el menú móvil
+            console.log('Menú móvil clickeado');
+        });
+    </script> -->
+    <script src="js/navbar.js"> </script>
+</body>
+
+</html>
