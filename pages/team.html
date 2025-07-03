@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ubicacion - FeloVisa</title>
+    <title>Team - FeloVisa</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../css/main.css">
     <style>
@@ -14,41 +15,41 @@
             padding: 0 20px;
         }
 
-        /* Location Hero */
+        /* New Location Hero */
         .location-hero {
             padding: 100px 0;
             background-color: var(--light);
             position: relative;
         }
-        
+
         .location-hero-content {
             max-width: 600px;
             padding: 40px;
-            background-color: rgba(255,255,255,0.9);
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 2;
         }
-        
+
         .location-hero h1 {
             font-size: 2.8rem;
             color: var(--primary);
             margin-bottom: 20px;
         }
-        
+
         .location-hero p {
             font-size: 1.3rem;
             color: var(--dark-gray);
             margin-bottom: 30px;
         }
-        
+
         .scrolldown {
             color: var(--accent);
             font-size: 1.5rem;
             animation: bounce 2s infinite;
         }
-        
+
         .office-preview {
             position: absolute;
             right: 5%;
@@ -57,9 +58,9 @@
             width: 50%;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
-        
+
         .office-preview img {
             width: 100%;
             height: auto;
@@ -113,161 +114,213 @@
             color: var(--primary);
         }
 
-        /* Location Header */
-        .location-header {
-            padding: 60px 0;
-            background: var(--light);
+        /* Team Section */
+        .team-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2c8f9343-99fa-4b65-b46d-94ffdc06cfba.png');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 120px 0;
         }
 
-        .location-intro {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .location-intro h2 {
-            font-size: 2.5rem;
+        .team-hero-content h1 {
+            font-size: 3rem;
             margin-bottom: 20px;
+            animation: fadeIn 1s ease-in;
         }
-        
-        .location-intro h2 span {
+
+        .team-section {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .team-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .team-intro h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .team-intro h2 span {
             color: var(--accent);
         }
-        
-        .location-highlights {
-            margin-top: 30px;
+
+        .team-grid {
             display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
+            flex-direction: column;
+            gap: 50px;
         }
-        
-        .location-highlights span {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+
+        .team-member.featured {
+            display: flex;
             background: var(--white);
-            padding: 10px 15px;
-            border-radius: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .member-photo {
+            flex: 1;
+            position: relative;
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
             font-size: 0.9rem;
         }
-        
-        .location-highlights i {
+
+        .member-info {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .member-credentials {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .member-credentials span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+
+        .member-credentials i {
             color: var(--accent);
         }
-        
+
+        .team-staff {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .founder-philosophy {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .philosophy-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .point {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .point i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .point h4 {
+            color: var(--primary);
+            margin: 15px 0;
+        }
+
         /* Redesigned Map Section */
         .map-section {
             padding: 80px 0;
             background-color: var(--white);
         }
-        
+
         .map-visual {
             display: flex;
             flex-direction: column;
             gap: 30px;
             margin-bottom: 50px;
         }
-        
+
         .map-visual iframe {
             width: 100%;
             height: 450px;
             border-radius: 12px;
             border: none;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-        
+
         .map-features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
-        
+
         .map-feature {
             background: var(--light);
             padding: 25px;
             border-radius: 8px;
             text-align: center;
         }
-        
+
         .map-feature i {
             font-size: 2rem;
             color: var(--accent);
             margin-bottom: 15px;
         }
-        
+
         .map-feature h3 {
             color: var(--primary);
             margin-bottom: 10px;
         }
-        
+
         .map-content {
             display: flex;
             gap: 50px;
             align-items: center;
         }
-        
+
         .map-content h2 {
             font-size: 2rem;
             color: var(--primary);
             margin-bottom: 20px;
         }
-        
+
         .transport-options {
             display: flex;
             gap: 30px;
             margin-top: 30px;
         }
-        
+
         .transport-option {
             text-align: center;
         }
-        
+
         .transport-option img {
             border-radius: 8px;
             margin-bottom: 10px;
-        }
-        
-        /* Location Features */
-        
-        .location-features {
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-        }
-        
-        .feature {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--primary);
-        }
-        
-        .feature i {
-            color: var(--accent);
-            font-size: 1.2rem;
-        }
-        
-        .location-map {
-            height: 400px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .location-map iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        @media (min-width: 768px) {
-            .location-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            
-            .location-features {
-                grid-template-columns: 1fr 1fr;
-            }
         }
 
         /* CTA Section */
@@ -280,7 +333,10 @@
         .cta-container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+        }
+
+        .cta-content {
+            margin-bottom: 40px;
         }
 
         .cta h2 {
@@ -349,124 +405,17 @@
             background-color: #2980b9;
         }
 
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: var(--white);
-            padding-top: 60px;
-            padding-bottom: 30px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .footer-logo {
-            font-size: 1.75rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .footer-logo span {
-            color: var(--accent);
-        }
-
-        .footer-about p {
-            color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 20px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-links a {
-            color: rgba(255, 255, 255, 0.6);
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--white);
-        }
-
-        .footer-heading {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.6);
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--white);
-        }
-
-        .contact-info {
-            list-style: none;
-        }
-
-        .contact-info li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .contact-info i {
-            margin-right: 10px;
-            font-size: 0.9rem;
-            margin-top: 3px;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .copyright {
-            color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .footer-legal {
-            display: flex;
-            gap: 20px;
-        }
-
-        .footer-legal a {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .footer-legal a:hover {
-            color: var(--white);
-        }
-
         /* Animaciones */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Media Queries para responsividad */
@@ -530,6 +479,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav>
@@ -538,8 +488,8 @@
 
             <div class="nav-links">
                 <a href="../index.html">Inicio</a>
-                <a href="#">Ubicación</a>
-                <a href="team.html">Nuestro Equipo</a>
+                <a href="location.html">Ubicación</a>
+                <a href="#">Nuestro Equipo</a>
                 <a href="contact.html">Contacto</a>
                 <a href="#" class="contact-btn">Agendar Cita</a>
             </div>
@@ -551,102 +501,110 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="location-hero">
+    <section class="team-hero">
         <div class="container">
-            <div class="location-hero-content">
-                <h1>Ven a Conocernos</h1>
-                <p>Un espacio diseñado para hacer tu proceso migratorio más eficiente y facil</p>
-                <div class="scrolldown">
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-            </div>
-            <div class="office-preview">
-                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/70ee4122-d630-432c-ab34-efb8c1b44334.png" alt="Recepción FeloVisa">
+            <div class="team-hero-content">
+                <h1>Conoce Nuestro Equipo</h1>
+                <p>Expertos comprometidos con hacer realidad tu proyecto migratorio</p>
             </div>
         </div>
     </section>
 
-    <!-- Location Sections -->
-    <section class="location-header">
+    <!-- Team Section -->
+    <section class="team-section">
         <div class="container">
-            <div class="location-intro">
-                <h2>Nuestro Espacio en <span>FELOVISA</span></h2>
-                <p>Diseñamos nuestras oficinas pensando en tu tranquilidad y comodidad durante todo el proceso migratorio</p>
-                <div class="location-highlights">
-                    <span><i class="fas fa-check-circle"></i> Ambientes privados</span>
-                    <span><i class="fas fa-check-circle"></i> Sala de espera </span>
-                    <span><i class="fas fa-check-circle"></i> Eficiencia</span>
+            <div class="team-intro">
+                <h2>Nuestra Experiencia <span>a tu servicio</span></h2>
+                <p>Con más de 15 años ayudando a familias y profesionales, nuestro equipo combina conocimiento técnico
+                    con un trato humano y cercano.</p>
+            </div>
+
+            <div class="team-grid">
+                <!-- Director -->
+                <div class="team-member featured">
+                    <div class="member-photo">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b2700db4-dc7f-4922-b491-f253918bbc5a.png"
+                            alt="Director de FeloVisa">
+                        <div class="member-badge">
+                            <i class="fas fa-star"></i> Administrador
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Lic. Roberto Fernández</h3>
+                        <p class="position">Fundador y Director General</p>
+                        <p class="bio">Abogado especializado en derecho migratorio internacional con más de 20 años de
+                            experiencia. Graduado con honores de la Universidad Nacional, ha asesorado a más de 1,500
+                            familias y profesionales en sus procesos migratorios. Su enfoque personalizado y
+                            conocimiento profundo de las leyes lo han convertido en un referente en el sector.</p>
+                        <div class="member-credentials">
+                            <span><i class="fas fa-graduation-cap"></i> Especialista en Derecho Internacional</span>
+                            <span><i class="fas fa-award"></i> Premio Excelencia Legal 2022</span>
+                        </div>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Founder's Philosophy -->
+                <div class="founder-philosophy">
+                    <h3>Nuestra Filosofía</h3>
+                    <div class="philosophy-points">
+                        <div class="point">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Enfoque Personalizado</h4>
+                            <p>Cada caso es único y merece atención individualizada.</p>
+                        </div>
+                        <div class="point">
+                            <i class="fas fa-balance-scale"></i>
+                            <h4>Transparencia Total</h4>
+                            <p>Sin sorpresas ni costos ocultos en nuestros servicios.</p>
+                        </div>
+                        <div class="point">
+                            <i class="fas fa-heart"></i>
+                            <h4>Compromiso Humano</h4>
+                            <p>Entendemos que detrás de cada caso hay sueños y familias.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Interactive Map Section -->
-    <section class="map-section">
-        <div class="container">
-            <div class="map-visual">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d945.8705109039523!2d-69.96158280352914!3d18.507106393508913!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8a2c08e5526b%3A0x5d810413f2dbb186!2sFELO%20VISA!5e0!3m2!1ses!2sdo!4v1751041468245!5m2!1ses!2sdo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <div class="map-features">
-                    <div class="map-feature">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3>Dirección exacta</h3>
-                        <p>Av. República de Colombia No. 48, esq. Av. Jacobo Majluta</p>
-                    </div>
-                    <div class="map-feature">
-                        <i class="fas fa-clock"></i>
-                        <h3>Horario</h3>
-                        <p>Lunes a Viernes: <b>8:00am - 5:00pm</b></p>
-                        <p>Sabados: <b>9:00am - 3:00pm</b></p>
-                    </div>
-                    <div class="map-feature">
-                        <i class="fas fa-phone"></i>
-                        <h3>Llámanos</h3>
-                        <p>+1 809 355 9393</p>
-                    </div>
-                </div>
-                <div class="location-features">
-                        <div class="feature">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Excelente ubicación de llegada</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-parking"></i>
-                            <span>Estacionamiento disponible</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-subway"></i>
-                            <span>Cerca del transporte público</span>
-                        </div>
-                    </div>
-            </div>
-            <div class="map-content">
-                <h2>Referencias</h2>
-                <p>Nuestra oficina está situada en el corazón financiero de la ciudad, con fácil acceso desde cualquier punto. Rodeada de los mejores restaurantes y zonas comerciales para tu comodidad.</p>
-                
-                <div class="transport-options">
-                    <div class="transport-option">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0e4439de-d3c4-4add-aa18-86d95ce159f8.png" alt="Estación de metro cercana">
-                        <p>Estación Metro a 100m</p>
-                    </div>
-                    <div class="transport-option">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f5cd1c0c-142b-4261-a603-7166bac75be8.png" alt="Estacionamiento cercano">
-                        <p>Estacionamiento en edificio</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- CTA Section -->
     <section class="cta">
         <div class="container cta-container">
             <div class="cta-content">
-                <h2>¿Listo para visitarnos?</h2>
-                <p>No dejes tu futuro al azar. Visita nuestra oficina y haz tu proceso migratorio hoy mismo.</p>
+                <h2>¿Listo para comenzar tu proceso migratorio?</h2>
+                <p>No dejes tu futuro al azar. Agenda una consulta gratuita con nuestros especialistas hoy mismo.</p>
                 <div class="cta-btns">
                     <a href="#" class="btn-primary">Agendar cita</a>
                     <a href="#" class="btn-secondary">WhatsApp <i class="fab fa-whatsapp"></i></a>
                 </div>
+            </div>
+            <div class="cta-form">
+                <h3>Consulta rápida</h3>
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre completo">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Correo electrónico">
+                    </div>
+                    <div class="form-group">
+                        <select>
+                            <option disabled selected>Servicio de interés</option>
+                            <option>Residencia permanente</option>
+                            <option>Visa de trabajo</option>
+                            <option>Reunión familiar</option>
+                            <option>Ciudadanía</option>
+                            <option>Otro</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar consulta</button>
+                </form>
             </div>
         </div>
     </section>
@@ -706,14 +664,43 @@
             </div>
         </div>
     </footer>
-    <!-- <script>
+
+    <script>
         // Menú móvil
         document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
-            // Esta función manejadora estaría vacía ya que estamos haciendo una demostración estática
-            // En una implementación real aquí iría la lógica para mostrar/ocultar el menú móvil
-            console.log('Menú móvil clickeado');
+            // En una implementación real, aquí iría la lógica para mostrar/ocultar el menú móvil.
+            // Por ejemplo, podrías añadir/quitar una clase 'active' al nav-links y controlar su display con CSS.
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column'; /* Para que los enlaces se apilen en móvil */
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '60px'; /* Ajusta según la altura de tu nav */
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.backgroundColor = 'var(--white)';
+                navLinks.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                navLinks.style.padding = '15px 0';
+                navLinks.style.alignItems = 'center';
+            }
         });
-    </script> -->
-    <script src="../js/navbar.js"></script>
+
+        // Ocultar menú móvil si se redimensiona a desktop
+        window.addEventListener('resize', function () {
+            const navLinks = document.querySelector('.nav-links');
+            if (window.innerWidth >= 768) { // Coincide con el media query de desktop
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'row';
+                navLinks.style.position = 'static';
+                navLinks.style.boxShadow = 'none';
+                navLinks.style.padding = '0';
+            } else {
+                navLinks.style.display = 'none'; // Ocultar por defecto en móvil si no está activo
+            }
+        });
+    </script>
 </body>
+
 </html>
