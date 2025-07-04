@@ -188,10 +188,40 @@
             margin: 0 auto;
         }
 
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            width: fit-content;
+            height: fit-content;
+            margin-bottom: 2rem;
+            border-radius: 0.1rem;
+            border: 1px solid #d3d3d3;
+            /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+            background-color: white;
+            margin-top: 1rem;
+        }
+
+        .tab {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: var(--white);
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .tab.active {
+            border: none;
+            background: var(--secondary);
+            color: var(--white);
+        }
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            perspective: 1000px;
         }
 
         .service-card {
@@ -199,7 +229,12 @@
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            opacity: 1;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .service-card.fade-out {
+            opacity: 0;
         }
 
         .service-card:hover {
@@ -518,40 +553,16 @@
             <div class="section-header">
                 <h2>Nuestros Servicios</h2>
                 <p>Ofrecemos soluciones completas para todas tus necesidades migratorias</p>
+                <div class="tabs">
+                    <button class="tab active" data-tab="visas">Visas</button>
+                    <button class="tab" data-tab="peticiones">Peticiones</button>
+                    <button class="tab" data-tab="legalizaciones">Legalizaciones</button>
+                    <button class="tab" data-tab="notarizaciones">Notarizaciones</button>
+                    <button class="tab" data-tab="consultas">Consultas</button>
+                </div>
             </div>
-
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-passport"></i>
-                    </div>
-                    <h3>Residencia Permanente</h3>
-                    <p>Te acompañamos en todo el proceso para obtener tu residencia permanente con los documentos
-                        correctos.</p>
-                    <a href="#" class="service-link">Más información <i class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3>Visa de Trabajo</h3>
-                    <p>Gestión completa de visas laborales para que puedas trabajar legalmente en el país de destino.
-                    </p>
-                    <a href="#" class="service-link">Más información <i class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>Reunificación Familiar</h3>
-                    <p>Ayudamos a familias a reunirse mediante los procesos legales de reagrupación familiar.</p>
-                    <a href="#" class="service-link">Más información <i class="fas fa-arrow-right"></i></a>
-                </div>
+            <div class="services-grid" id="services-container">
+                <!-- Las cards se generan mediante Js -->
             </div>
         </div>
     </section>
@@ -580,7 +591,7 @@
                         recomendados!"</p>
                     <div class="testimonial-author">
                         <!-- <img src="https://via.placeholder.com/70/2ecc71/ffffff?text=MA" alt="Foto de María García"> -->
-                         <i class="fa-solid fa-circle-user" style="font-size: 70px;"></i>
+                        <i class="fa-solid fa-circle-user" style="font-size: 70px;"></i>
                         <h4>María García</h4>
                         <span>Visa de Trabajo</span>
                     </div>
@@ -591,7 +602,7 @@
                         que mi familia pudiera estar junta."</p>
                     <div class="testimonial-author">
                         <!-- <img src="https://via.placeholder.com/70/e67e22/ffffff?text=RL" alt="Foto de Roberto López"> -->
-                         <i class="fa-solid fa-circle-user" style="font-size: 70px;"></i>
+                        <i class="fa-solid fa-circle-user" style="font-size: 70px;"></i>
                         <h4>Roberto López</h4>
                         <span>Reunificación Familiar</span>
                     </div>
@@ -701,6 +712,71 @@
         });
     </script> -->
     <script src="js/navbar.js"> </script>
+
+    <script>
+        const cardData = {
+            visas: [
+                { icon: 'fas fa-passport', title: 'Residencia Permanente', description: 'Te acompañamos en todo el proceso para obtener tu residencia permanente con los documentos correctos.' },
+                { icon: 'fa-regular fa-gem', title: 'Visa de Novio', description: 'Unimos corazones en el marco legal adecuado.' },
+                { icon: 'fas fa-briefcase', title: 'Visa de Trabajo', description: 'Gestión completa de visas laborales para que puedas trabajar legalmente en el país de destino.' }
+            ],
+            peticiones: [
+                {icon: 'fas fa-home' , title: 'Peticion Familiar', description: 'Te acompañamos en todo el proceso para obtener tu residencia permanente con los documentos correctos.'}
+            ],
+            legalizaciones: [
+                { icon: 'fa-solid fa-file-signature', title: 'Documentos Legales' },
+                { icon: 'fa-solid fa-stamp', title: 'Certificaciones Apostilladas' },
+                { icon: 'fa-solid fa-globe', title: 'Traducciones Juradas' }
+            ],
+            notarizaciones: [
+                { icon: 'fa-solid fa-pen-fancy', title: 'Notarización de Documentos' },
+                { icon: 'fa-solid fa-shield', title: 'Declaraciones Juradas' },
+                { icon: 'fa-solid fa-id-card', title: 'Poderes Notariales' }
+            ],
+            consultas: [
+                { icon: 'fa-solid fa-comments', title: 'Consulta General' },
+                { icon: 'fa-solid fa-user-shield', title: 'Consulta con Abogado' },
+                { icon: 'fa-solid fa-calendar-check', title: 'Revisión de Caso' }
+            ]
+        };
+
+        const tabs = document.querySelectorAll('.tab');
+        const cardsContainer = document.getElementById('services-container');
+
+        function renderCards(category) {
+            cardsContainer.classList.add('fade-out');
+
+            setTimeout(() => {
+                const cards = cardData[category]
+                    .map(card => `
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="${card.icon}"></i>
+                    </div>
+                    <h3>${card.title}</h3>
+                    <p>${card.description || 'Descripción del servicio.'}</p>
+                    <a href="#" class="service-link">Más información <i class="fas fa-arrow-right"></i></a>
+                </div>
+            `)
+                    .join('');
+                cardsContainer.innerHTML = cards;
+                cardsContainer.classList.remove('fade-out');
+            }, 300);
+        }
+
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const selectedTab = tab.getAttribute('data-tab');
+                renderCards(selectedTab);
+            });
+        });
+
+        // Render default tab
+        renderCards('visas');
+    </script>
 </body>
 
 </html>
