@@ -23,11 +23,11 @@
             background-position: center;
             color: var(--white);
             text-align: center;
-            padding: 100px 0;
+            padding: 150px 0;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             font-weight: bold;
             margin-bottom: 20px;
             animation: fadeIn 1s ease-in;
@@ -47,7 +47,7 @@
         }
 
         .btn-primary {
-            background-color: var(--accent);
+            background-color: var(--secondary);
             color: var(--white);
             padding: 12px 24px;
             border-radius: 4px;
@@ -81,11 +81,14 @@
 
         .about-container {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            text-align: center;
         }
 
         .about-content {
-            margin-bottom: 40px;
+            width: 50%;
+            padding-right: 40px;
+            margin-bottom: 0;
         }
 
         .about h2 {
@@ -142,9 +145,9 @@
         }
 
         .about-image {
+            width: 50%;
             background-color: #ddd;
             border-radius: 12px;
-            overflow: hidden;
             height: 400px;
             position: relative;
         }
@@ -191,6 +194,7 @@
         .tabs {
             display: flex;
             justify-content: center;
+            flex-direction: row;
             margin: 0 auto;
             width: fit-content;
             height: fit-content;
@@ -327,91 +331,6 @@
             color: var(--gray);
         }
 
-        /* CTA Section */
-        .cta {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 80px 0;
-        }
-
-        .cta-container {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .cta-content {
-            margin-bottom: 40px;
-        }
-
-        .cta h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        .cta p {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 30px;
-        }
-
-        .cta-btns {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .cta-form {
-            background-color: var(--white);
-            padding: 30px;
-            border-radius: 5px;
-            color: var(--dark);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-        }
-
-        .cta-form h3 {
-            text-align: center;
-            font-size: 1.25rem;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
-        }
-
-        .submit-btn {
-            width: 100%;
-            background-color: var(--secondary);
-            color: var(--white);
-            padding: 12px;
-            border: none;
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .submit-btn:hover {
-            background-color: var(--accent);
-        }
-
-
         /* Animaciones */
         @keyframes fadeIn {
             from {
@@ -426,63 +345,49 @@
         }
 
         /* Media Queries para responsividad */
-        @media (min-width: 768px) {
+        @media (max-width: 768px) {
+
             .hero h1 {
                 font-size: 3rem;
             }
 
             .about-container {
-                flex-direction: row;
+                flex-direction: column;
                 align-items: center;
             }
 
             .about-content {
-                width: 50%;
-                padding-right: 40px;
-                margin-bottom: 0;
+                margin-bottom: 40px;
             }
 
             .about-image {
-                width: 50%;
+                background-color: #ddd;
+                border-radius: 12px;
+                overflow: hidden;
+                height: 400px;
+                position: relative;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            .tab.active {
+                border-radius: 0.1rem;
             }
 
             .cta-container {
-                flex-direction: row;
-                align-items: center;
+                flex-direction: column;
             }
 
             .cta-content {
-                width: 50%;
-                padding-right: 40px;
-                margin-bottom: 0;
-            }
-
-            .cta-form {
-                width: 50%;
+                margin-bottom: 40px;
             }
 
             .cta-btns {
-                flex-direction: row;
+                flex-direction: column;
             }
 
-            .nav-links {
-                display: flex;
-                align-items: center;
-            }
-
-            .mobile-menu-btn {
-                display: none;
-            }
-        }
-
-        @media (min-width: 992px) {
-            .hero {
-                padding: 150px 0;
-            }
-
-            .hero h1 {
-                font-size: 3.5rem;
-            }
         }
     </style>
 </head>
@@ -494,7 +399,7 @@
             <a href="#" class="logo">FELO<span>VISA</span></a>
 
             <div class="nav-links">
-                <a href="#">Inicio</a>
+                <a href="#"><span>Inicio</span></a>
                 <a href="pages/location.html">Ubicación</a>
                 <a href="pages/team.html">Nuestro Equipo</a>
                 <a href="pages/contact.html">Contacto</a>
@@ -512,7 +417,7 @@
             <h1>Tu futuro migratorio en las manos correctas</h1>
             <p>Asesoría legal especializada y personalizada para todos tus trámites migratorios</p>
             <div class="hero-btns">
-                <a href="#" class="btn-primary">Agendar consulta gratuita</a>
+                <a href="#" class="btn-primary">Agendar consulta</a>
                 <a href="#services" class="btn-secondary">Nuestros servicios</a>
             </div>
         </div>
@@ -522,10 +427,10 @@
     <section class="about">
         <div class="container about-container">
             <div class="about-content">
-                <h2>Más de 15 años guiando sueños</h2>
-                <p>En FeloVisa nos especializamos en facilitar tu transición migratoria. Nuestro equipo de abogados
-                    certificados ha ayudado a más de 1,200 familias y profesionales a regularizar su situación en el
-                    país.
+                <h2>Más de 15 años ....</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque asperiores aliquam blanditiis
+                    reiciendis ea suscipit minus eius error velit, enim ullam nostrum, tempora vero necessitatibus,
+                    voluptas perspiciatis sint aut mollitia?
                 </p>
 
                 <div class="stats">
@@ -537,7 +442,8 @@
                         <div class="stat-number">98%</div>
                         <div class="stat-text">Casos Exitosos</div>
                     </div>
-                    <a href="#" class="btn btn-primary">Conoce nuestro equipo <i class="fas fa-arrow-right"></i></a>
+                    <a href="pages/team.html" class="btn btn-primary">Conoce nuestro equipo <i
+                            class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="about-image">
@@ -615,37 +521,16 @@
     <section class="cta">
         <div class="container cta-container">
             <div class="cta-content">
-                <h2>¿Listo para comenzar tu proceso migratorio?</h2>
-                <p>No dejes tu futuro al azar. Agenda una consulta gratuita con nuestros especialistas hoy mismo.</p>
+                <h2>Tu proceso migratorio <span>Comienza Aquí</span></h2>
+                <p>Recibe asesoría personalizada de nuestros expertos. ¡Estamos aquí para ayudarte!</p>
                 <div class="cta-btns">
                     <a href="#" class="btn-primary">Agendar cita</a>
                     <a href="#" class="btn-secondary">WhatsApp <i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-            <div class="cta-form">
-                <h3>Consulta rápida</h3>
-                <form>
-                    <div class="form-group">
-                        <input type="text" placeholder="Nombre completo">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Correo electrónico">
-                    </div>
-                    <div class="form-group">
-                        <select>
-                            <option disabled selected>Servicio de interés</option>
-                            <option>Residencia permanente</option>
-                            <option>Visa de trabajo</option>
-                            <option>Reunión familiar</option>
-                            <option>Ciudadanía</option>
-                            <option>Otro</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="submit-btn">Enviar consulta</button>
-                </form>
-            </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer>
@@ -721,7 +606,7 @@
                 { icon: 'fas fa-briefcase', title: 'Visa de Trabajo', description: 'Gestión completa de visas laborales para que puedas trabajar legalmente en el país de destino.' }
             ],
             peticiones: [
-                {icon: 'fas fa-home' , title: 'Peticion Familiar', description: 'Te acompañamos en todo el proceso para obtener tu residencia permanente con los documentos correctos.'}
+                { icon: 'fas fa-home', title: 'Peticion Familiar', description: 'Te acompañamos en todo el proceso para obtener tu residencia permanente con los documentos correctos.' }
             ],
             legalizaciones: [
                 { icon: 'fa-solid fa-file-signature', title: 'Documentos Legales' },

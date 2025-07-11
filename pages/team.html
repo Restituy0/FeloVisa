@@ -323,88 +323,6 @@
             margin-bottom: 10px;
         }
 
-        /* CTA Section */
-        .cta {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 80px 0;
-        }
-
-        .cta-container {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .cta-content {
-            margin-bottom: 40px;
-        }
-
-        .cta h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        .cta p {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 30px;
-        }
-
-        .cta-btns {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .cta-form {
-            background-color: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            color: var(--dark);
-        }
-
-        .cta-form h3 {
-            font-size: 1.25rem;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
-        }
-
-        .submit-btn {
-            width: 100%;
-            background-color: var(--secondary);
-            color: var(--white);
-            padding: 12px;
-            border: none;
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .submit-btn:hover {
-            background-color: #2980b9;
-        }
-
         /* Animaciones */
         @keyframes fadeIn {
             from {
@@ -438,34 +356,6 @@
             .about-image {
                 width: 50%;
             }
-
-            .cta-container {
-                flex-direction: row;
-                align-items: center;
-            }
-
-            .cta-content {
-                width: 50%;
-                padding-right: 40px;
-                margin-bottom: 0;
-            }
-
-            .cta-form {
-                width: 50%;
-            }
-
-            .cta-btns {
-                flex-direction: row;
-            }
-
-            .nav-links {
-                display: flex;
-                align-items: center;
-            }
-
-            .mobile-menu-btn {
-                display: none;
-            }
         }
 
         @media (min-width: 992px) {
@@ -489,7 +379,7 @@
             <div class="nav-links">
                 <a href="../index.html">Inicio</a>
                 <a href="location.html">Ubicación</a>
-                <a href="#">Nuestro Equipo</a>
+                <a href="#"><span>Nuestro Equipo</span></a>
                 <a href="contact.html">Contacto</a>
                 <a href="#" class="contact-btn">Agendar Cita</a>
             </div>
@@ -583,28 +473,6 @@
                     <a href="#" class="btn-primary">Agendar cita</a>
                     <a href="#" class="btn-secondary">WhatsApp <i class="fab fa-whatsapp"></i></a>
                 </div>
-            </div>
-            <div class="cta-form">
-                <h3>Consulta rápida</h3>
-                <form>
-                    <div class="form-group">
-                        <input type="text" placeholder="Nombre completo">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Correo electrónico">
-                    </div>
-                    <div class="form-group">
-                        <select>
-                            <option disabled selected>Servicio de interés</option>
-                            <option>Residencia permanente</option>
-                            <option>Visa de trabajo</option>
-                            <option>Reunión familiar</option>
-                            <option>Ciudadanía</option>
-                            <option>Otro</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="submit-btn">Enviar consulta</button>
-                </form>
             </div>
         </div>
     </section>

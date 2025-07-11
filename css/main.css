@@ -28,6 +28,10 @@ a {
     color: inherit;
 }
 
+span {
+    color: var(--secondary);
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -67,7 +71,8 @@ nav {
 }
 
 .nav-links {
-    display: none;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a {
@@ -109,12 +114,59 @@ nav {
 }
 
 .mobile-menu-btn {
-    display: block;
-    color: var(--gray);
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
+    display: none;
+}
+
+@media (max-width:768px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        color: var(--gray);
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+/* Estilo para Call to Action */
+
+.cta {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 80px 0;
+}
+
+.cta-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.cta-content {
+    width: 100%;
+}
+
+.cta-content span {
+    font-size: 2.5rem;
+    color: var(--secondary);
+}
+
+.cta h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.cta p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
 }
 
 /* Estilos para el footer */
@@ -140,7 +192,7 @@ footer {
 }
 
 .footer-logo span {
-    color: var(--accent);
+    color: var(--secondary);
 }
 
 .footer-about p {
