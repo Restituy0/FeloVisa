@@ -6,14 +6,8 @@
     <title>Ubicacion - FeloVisa</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" href="../img/logo.png" type="image/x-icon">
     <style>
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
         /* Location Hero */
         .location-hero {
             padding: 100px 0;
@@ -84,33 +78,6 @@
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background-color: var(--accent);
-            color: var(--white);
-            padding: 12px 24px;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: #c0392b;
-        }
-
-        .btn-secondary {
-            border: 2px solid var(--white);
-            color: var(--white);
-            padding: 12px 24px;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--white);
-            color: var(--primary);
         }
 
         /* Location Header */
@@ -455,14 +422,18 @@
     <!-- Navigation -->
     <nav>
         <div class="container nav-container">
-            <a href="#" class="logo">FELO<span>VISA</span></a>
+
+            <div class="logo">
+            <img src="../img/logo.png" alt="Logo" class="imglogo">
+            <a href="#" >FELO<span>VISA</span></a>
+            </div>
 
             <div class="nav-links">
                 <a href="../index.html">Inicio</a>
                 <a href="#"><span>Ubicación</span></a>
                 <a href="team.html">Nuestro Equipo</a>
                 <a href="contact.html">Contacto</a>
-                <a href="#" class="contact-btn">Agendar Cita</a>
+                <a href="pay.html" class="contact-btn">Reservar Consulta</a>
             </div>
 
             <button class="mobile-menu-btn">
@@ -565,8 +536,8 @@
                 <h2>¿Listo para visitarnos?</h2>
                 <p>No dejes tu futuro al azar. Visita nuestra oficina y haz tu proceso migratorio hoy mismo.</p>
                 <div class="cta-btns">
-                    <a href="#" class="btn-primary">Agendar cita</a>
-                    <a href="#" class="btn-secondary">WhatsApp <i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="btn-primary">Reservar Consulta</a>
+                    <a href="https://wa.link/4m1zsw" class="btn-secondary" target="_blank">WhatsApp <i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>

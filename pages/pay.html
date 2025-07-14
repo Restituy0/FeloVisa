@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team - FeloVisa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" href="../img/logo.png" type="image/x-icon">
+    <style>
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4c1f60d8-c486-4e51-b8fc-d18f9b4d6170.png');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+        }
+
+        /* Estilos para la sección de pago */
+        .payment-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .payment-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .payment-section p {
+            color: var(--dark-gray);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .bank-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .bank-card {
+            min-width: 30%;
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .bank-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .bank-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .bank-icon {
+            font-size: 1.8rem;
+            color: var(--accent);
+            background: rgba(231, 76, 60, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bank-details {
+            padding: 10px 0;
+        }
+
+        .bank-details i {
+            margin-right: 8px;
+            color: var(--secondary);
+        }
+
+        .bank-card span {
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        .cta-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+
+        .btn-secondary {
+            border: 2px solid var(--white);
+            color: var(--primary);
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s, transform 0.3s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Verification Section */
+        .payment-verification {
+            margin: 0 auto;
+            max-width: 800px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .payment-verification h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .verification-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .method {
+            background: rgba(52, 152, 219, 0.1);
+            padding: 25px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            border-left: 4px solid var(--secondary);
+            text-align: center;
+        }
+
+        .method:hover {
+            background: rgba(52, 152, 219, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .method i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        /* Process Steps */
+        .process-section {
+            background: var(--white);
+            padding: 60px 0;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 20px;
+            background: var(--light);
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .step:hover {
+            transform: translateY(-3px);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            line-height: 40px;
+            margin-bottom: 15px;
+        }
+
+        /* Sección de Compromisos */
+        .trust-section {
+            padding: 40px 0;
+            background-color: var(--white);
+            text-align: center;
+            border-top: 1px solid var(--light);
+        }
+
+        .trust-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .trust-section p {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .trust-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        /* Sección de seguridad */
+        .security-section {
+            padding: 40px 0;
+            background-color: var(--white);
+            text-align: center;
+            border-top: 1px solid var(--light);
+        }
+
+        .security-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .security-section p {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .security-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+
+            <div class="logo">
+                <img src="../img/logo.png" alt="Logo" class="imglogo">
+                <a href="#">FELO<span>VISA</span></a>
+            </div>
+
+            <div class="nav-links">
+                <a href="../index.html">Inicio</a>
+                <a href="location.html">Ubicación</a>
+                <a href="team.html">Nuestro Equipo</a>
+                <a href="contact.html">Contacto</a>
+                <a href="#" class="contact-btn">Reservar Consulta</a>
+            </div>
+
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Reserva <span>Segura</span> y <span>Confiable</span></h1>
+            <p>¿Te gustaría que apartemos un lugar para ti y así agilizar tu proceso?</p>
+            <span>Reservala Ahora</span>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section class="payment-section">
+        <div class="container">
+            <h1>Reserva tu Consulta</h1>
+            <p>Para garantizar tu consulta, realiza el pago mediante transferencia a las siguientes cuentas bancarias.
+                Asegúrate de guardar tu comprobante de pago.</p>
+            <div class="bank-info">
+                <div class="bank-card">
+                    <div class="bank-header">
+                        <div class="bank-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h3>Banco Popular</h3>
+                    </div>
+                    <div class="bank-details">
+                        <p><i class="fas fa-user"></i> Nombre: FeloVisa Consultas</p>
+                        <p><i class="fas fa-hashtag"></i> Cuenta: <span>123-456-789</span></p>
+                        <p><i class="fas fa-wallet"></i> Tipo: <span>Cuenta Corriente</span></p>
+                        <p><i class="fas fa-code"></i> SWIFT: <span>ABC123XYZ</span></p>
+                    </div>
+                </div>
+                <div class="bank-card">
+                    <div class="bank-header">
+                        <div class="bank-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h3>BHD</h3>
+                    </div>
+                    <div class="bank-details">
+                        <p><i class="fas fa-user"></i> Nombre: FeloVisa Consultas</p>
+                        <p><i class="fas fa-hashtag"></i> Cuenta: <span>987-654-321</span></p>
+                        <p><i class="fas fa-wallet"></i> Tipo: <span>Cuenta Ahorros</span></p>
+                        <p><i class="fas fa-code"></i> SWIFT: <span>ABC123XYZ</span></p>
+                    </div>
+                </div>
+                <div class="bank-card">
+                    <div class="bank-header">
+                        <div class="bank-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h3>Banco Banreservas</h3>
+                    </div>
+                    <div class="bank-details">
+                        <p><i class="fas fa-user"></i> Nombre: FeloVisa Consultas</p>
+                        <p><i class="fas fa-hashtag"></i> Cuenta: <span>456-789-123</span></p>
+                        <p><i class="fas fa-wallet"></i> Tipo: <span>Cuenta Corriente</span></p>
+                        <p><i class="fas fa-code"></i> SWIFT: <span>ABC123XYZ</span></p>
+                    </div>
+                </div>
+                <div class="bank-card">
+                    <div class="bank-header">
+                        <div class="bank-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h3>Zeller</h3>
+                    </div>
+                    <div class="bank-details">
+                        <p><i class="fas fa-user"></i> Nombre: FeloVisa Consultas</p>
+                        <p><i class="fas fa-hashtag"></i> Cuenta: <span>321-654-987</span></p>
+                        <p><i class="fas fa-wallet"></i> Tipo: <span>Cuenta Ahorros</span></p>
+                        <p><i class="fas fa-code"></i> SWIFT: <span>ABC123XYZ</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="cta-btns">
+                <a href="#" class="btn-primary">Confirmar Pago</a>
+                <a href="https://wa.link/4m1zsw" class="btn-secondary" target="_blank">WhatsApp <i class="fab fa-whatsapp"></i></a>
+            </div>
+
+            <!-- Process Steps Section -->
+            <section class="process-section">
+                <div class="container">
+                    <h2>Cómo Reservar tu Consulta</h2>
+                    <div class="steps">
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <h3>Elige tu Banco</h3>
+                            <p>Selecciona la institución bancaria de tu preferencia</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <h3>Realiza el Pago</h3>
+                            <p>Transfiere el monto correspondiente a nuestra cuenta</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <h3>Envía el Comprobante</h3>
+                            <p>Comparte tu voucher por WhatsApp o Email</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">4</span>
+                            <h3>Recibe Confirmación</h3>
+                            <p>Te enviaremos los detalles de tu consulta reservada</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="payment-verification">
+                <h2>Verificación Segura</h2>
+                <p>Puedes verificar la autenticidad de nuestras cuentas bancarias directamente con el banco</p>
+                <div class="verification-methods">
+                    <div class="method">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Solicita identificación de nuestro personal</p>
+                    </div>
+                    <div class="method">
+                        <i class="fas fa-shield-alt"></i>
+                        <p>Confirma nuestros datos ante el banco</p>
+                    </div>
+                    <div class="method">
+                        <i class="fas fa-clock"></i>
+                        <p>Recibirás confirmación inmediata</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="trust-section">
+        <div class="container">
+            <h2>Nuestros Compromisos</h2>
+            <div class="trust-items">
+                <div class="trust-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Seguridad Garantizada</h3>
+                    <p>Todos los datos están protegidos con encriptación</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Transparencia Total</h3>
+                    <p>Sin costos ocultos o cargos adicionales</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Confirmación Inmediata</h3>
+                    <p>Recibirás respuesta en menos de 24 horas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section class="security-section">
+        <div class="container">
+            <h2>Tu Seguridad es Nuestra Prioridad</h2>
+            <p>Todos los pagos son procesados de manera segura y confiable. Tu información está protegida y no será
+                compartida con terceros.</p>
+            <i class="fas fa-lock security-icon"></i>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">Felo<span>Visa</span></a>
+                    <p>Expertos en asesoría migratoria y gestión legal internacional.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="footer-heading">Servicios</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Residencia permanente</a></li>
+                        <li><a href="#">Visas de trabajo</a></li>
+                        <li><a href="#">Reunificación familiar</a></li>
+                        <li><a href="#">Ciudadanía</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer-heading">Enlaces útiles</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Documentación requerida</a></li>
+                        <li><a href="#">Testimonios</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer-heading">Contacto</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Av. República de Colombia No. 48, esq. Av. Jacobo
+                            Majluta</li>
+                        <li><i class="fas fa-phone-alt"></i> +1 (809) 355-9393</li>
+                        <li><i class="fas fa-envelope"></i> felovisa@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 FeloVisa. Todos los derechos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Términos de servicio</a>
+                    <a href="#">Política de privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/navbar.js"></script>
+    <!-- <script>
+        // Menú móvil
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '60px';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.backgroundColor = 'var(--white)';
+                navLinks.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                navLinks.style.padding = '15px 0';
+                navLinks.style.alignItems = 'center';
+            }
+        });
+
+        // Ocultar menú móvil si se redimensiona a desktop
+        window.addEventListener('resize', function () {
+            const navLinks = document.querySelector('.nav-links');
+            if (window.innerWidth >= 768) {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'row';
+                navLinks.style.position = 'static';
+                navLinks.style.boxShadow = 'none';
+                navLinks.style.padding = '0';
+            } else {
+                navLinks.style.display = 'none';
+            }
+        });
+    </script> -->
+</body>
+
+</html>

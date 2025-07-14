@@ -7,18 +7,13 @@
     <title>FeloVisa - Asesoría Migratoria Especializada</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
     <style>
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
 
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             color: var(--white);
@@ -44,33 +39,6 @@
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background-color: var(--secondary);
-            color: var(--white);
-            padding: 12px 24px;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: #dd0000;
-        }
-
-        .btn-secondary {
-            border: 2px solid var(--white);
-            color: var(--white);
-            padding: 12px 24px;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--white);
-            color: var(--primary);
         }
 
         /* About Section */
@@ -284,40 +252,44 @@
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
         .testimonial-card {
             background-color: var(--white);
-            padding: 30px;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            overflow: hidden;
+            /* Para asegurar que la imagen no sobresalga */
         }
 
-        .testimonial-card p {
+        .testimonial-image {
+            width: 100%;
+            height: 400px;
+            /* Altura fija para uniformidad */
+            object-fit: cover;
+            /* Asegura que la imagen cubra el área sin distorsionarse */
+        }
+
+        .testimonial-content {
+            padding: 20px;
+        }
+
+        .testimonial-content p {
             font-style: italic;
             color: var(--dark-gray);
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .testimonial-author {
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-
-        .testimonial-author img {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 10px;
-            border: 3px solid var(--secondary);
         }
 
         .testimonial-author h4 {
@@ -328,8 +300,9 @@
 
         .testimonial-author span {
             font-size: 0.9rem;
-            color: var(--gray);
+            color: var(--secondary);
         }
+
 
         /* Animaciones */
         @keyframes fadeIn {
@@ -396,7 +369,11 @@
     <!-- Navigation -->
     <nav>
         <div class="container nav-container">
-            <a href="#" class="logo">FELO<span>VISA</span></a>
+
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo" class="imglogo">
+                <a href="#">FELO<span>VISA</span></a>
+            </div>
 
             <div class="nav-links">
                 <a href="#"><span>Inicio</span></a>
@@ -417,7 +394,7 @@
             <h1>Tu futuro migratorio en las manos correctas</h1>
             <p>Asesoría legal especializada y personalizada para todos tus trámites migratorios</p>
             <div class="hero-btns">
-                <a href="#" class="btn-primary">Agendar consulta</a>
+                <a href="pages/pay.html" class="btn-primary">Reservar consulta</a>
                 <a href="#services" class="btn-secondary">Nuestros servicios</a>
             </div>
         </div>
@@ -427,7 +404,7 @@
     <section class="about">
         <div class="container about-container">
             <div class="about-content">
-                <h2>Más de 15 años ....</h2>
+                <h2>Más de 15 años ...</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque asperiores aliquam blanditiis
                     reiciendis ea suscipit minus eius error velit, enim ullam nostrum, tempora vero necessitatibus,
                     voluptas perspiciatis sint aut mollitia?
@@ -477,40 +454,47 @@
     <section class="testimonials">
         <div class="container">
             <div class="section-header">
-                <h2>Lo que dicen nuestros clientes</h2>
-                <p>Historias de éxito y la confianza que nuestros clientes han depositado en nosotros.</p>
+                <h2>Historias de Éxito</h2>
+                <p>Lo que nuestros clientes dicen sobre su experiencia con nosotros.</p>
             </div>
             <div class="testimonials-grid">
                 <!-- Testimonial 1 -->
                 <div class="testimonial-card">
-                    <p>"Gracias a MigraPlus, mi proceso de residencia fue mucho más sencillo de lo que imaginaba. Su
-                        equipo es muy profesional y atento."</p>
-                    <div class="testimonial-author">
-                        <i class="fa-solid fa-circle-user" style="font-size: 70px;"></i>
-                        <h4>Juan Pérez</h4>
-                        <span>Residencia Permanente</span>
+                    <img src="img/testimonio1.jpg" alt="Juan Pérez"
+                        class="testimonial-image">
+                    <div class="testimonial-content">
+                        <p>"Gracias a MigraPlus, mi proceso de residencia fue mucho más sencillo de lo que imaginaba. Su
+                            equipo es muy profesional y atento."</p>
+                        <div class="testimonial-author">
+                            <h4>Juan Pérez</h4>
+                            <span>Residencia Permanente</span>
+                        </div>
                     </div>
                 </div>
                 <!-- Testimonial 2 -->
                 <div class="testimonial-card">
-                    <p>"Obtener mi visa de trabajo parecía imposible, pero MigraPlus me guió en cada paso. ¡Altamente
-                        recomendados!"</p>
-                    <div class="testimonial-author">
-                        <!-- <img src="https://via.placeholder.com/70/2ecc71/ffffff?text=MA" alt="Foto de María García"> -->
-                        <i class="fa-solid fa-circle-user" style="font-size: 70px;"></i>
-                        <h4>María García</h4>
-                        <span>Visa de Trabajo</span>
+                    <img src="img/testimonio2.jpg" alt="María García"
+                        class="testimonial-image">
+                    <div class="testimonial-content">
+                        <p>"Obtener mi visa de trabajo parecía imposible, pero MigraPlus me guió en cada paso.
+                            ¡Altamente recomendados!"</p>
+                        <div class="testimonial-author">
+                            <h4>María García</h4>
+                            <span>Visa de Trabajo</span>
+                        </div>
                     </div>
                 </div>
                 <!-- Testimonial 3 -->
                 <div class="testimonial-card">
-                    <p>"La reunificación familiar es un sueño hecho realidad. El apoyo de MigraPlus fue fundamental para
-                        que mi familia pudiera estar junta."</p>
-                    <div class="testimonial-author">
-                        <!-- <img src="https://via.placeholder.com/70/e67e22/ffffff?text=RL" alt="Foto de Roberto López"> -->
-                        <i class="fa-solid fa-circle-user" style="font-size: 70px;"></i>
-                        <h4>Roberto López</h4>
-                        <span>Reunificación Familiar</span>
+                    <img src="img/testimonio3.jpg" alt="Roberto López"
+                        class="testimonial-image">
+                    <div class="testimonial-content">
+                        <p>"La reunificación familiar es un sueño hecho realidad. El apoyo de MigraPlus fue fundamental
+                            para que mi familia pudiera estar junta."</p>
+                        <div class="testimonial-author">
+                            <h4>Roberto López</h4>
+                            <span>Reunificación Familiar</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -524,8 +508,8 @@
                 <h2>Tu proceso migratorio <span>Comienza Aquí</span></h2>
                 <p>Recibe asesoría personalizada de nuestros expertos. ¡Estamos aquí para ayudarte!</p>
                 <div class="cta-btns">
-                    <a href="#" class="btn-primary">Agendar cita</a>
-                    <a href="#" class="btn-secondary">WhatsApp <i class="fab fa-whatsapp"></i></a>
+                    <a href="pages/pay.html" class="btn-primary">Reservar Consulta</a>
+                    <a href="https://wa.link/4m1zsw" class="btn-secondary" target="_blank">WhatsApp <i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
@@ -640,7 +624,7 @@
                     </div>
                     <h3>${card.title}</h3>
                     <p>${card.description || 'Descripción del servicio.'}</p>
-                    <a href="#" class="service-link">Más información <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://wa.link/2azkd2" class="service-link" target="_blank">Más información <i class="fas fa-arrow-right"></i></a>
                 </div>
             `)
                     .join('');

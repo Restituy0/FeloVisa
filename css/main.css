@@ -44,6 +44,33 @@ img {
     padding: 0 20px;
 }
 
+.btn-primary {
+    background-color: var(--secondary);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #dd0000;
+}
+
+.btn-secondary {
+    border: 2px solid var(--white);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: var(--white);
+    color: var(--primary);
+}
+
 /* Estilos para la navegación */
 nav {
     background-color: var(--white);
@@ -60,7 +87,13 @@ nav {
     align-items: center;
 }
 
+.imglogo {
+    width: 4rem;
+}
+
 .logo {
+    display: flex;
+    align-items: center;
     font-size: 1.75rem;
     font-weight: bold;
     color: var(--primary);
@@ -115,9 +148,19 @@ nav {
 
 .mobile-menu-btn {
     display: none;
+    color: var(--gray);
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 @media (max-width:768px) {
+
+    .logo {
+        position: relative;
+        margin: 0 auto;
+    }
 
     .nav-links {
         display: none;
@@ -125,11 +168,6 @@ nav {
 
     .mobile-menu-btn {
         display: block;
-        color: var(--gray);
-        font-size: 1.5rem;
-        background: none;
-        border: none;
-        cursor: pointer;
     }
 }
 
