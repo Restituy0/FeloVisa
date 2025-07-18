@@ -91,7 +91,7 @@
         /* Team Section */
         .team-hero {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2c8f9343-99fa-4b65-b46d-94ffdc06cfba.png');
+            url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2c8f9343-99fa-4b65-b46d-94ffdc06cfba.png');
             background-size: cover;
             background-position: center;
             color: var(--white);
@@ -197,7 +197,6 @@
 
         .founder-philosophy {
             text-align: center;
-            margin-top: 60px;
         }
 
         .philosophy-points {
@@ -311,36 +310,18 @@
         }
 
         /* Media Queries para responsividad */
-        @media (min-width: 768px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
+        @media (max-width: 768px) {
 
-            .about-container {
-                flex-direction: row;
-                align-items: center;
+            .team-member{
+                flex-direction: column;
+                text-align: justify;
             }
-
-            .about-content {
-                width: 50%;
-                padding-right: 40px;
-                margin-bottom: 0;
+            .team-member h3 {
+                text-align: center;
             }
-
-            .about-image {
-                width: 50%;
-            }
+            
         }
 
-        @media (min-width: 992px) {
-            .hero {
-                padding: 150px 0;
-            }
-
-            .hero h1 {
-                font-size: 3.5rem;
-            }
-        }
     </style>
 </head>
 

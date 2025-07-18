@@ -226,16 +226,6 @@
             height: 100%;
             border: none;
         }
-        
-        @media (min-width: 768px) {
-            .location-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            
-            .location-features {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
 
         /* Footer */
         footer {
@@ -358,53 +348,35 @@
         }
 
         /* Media Queries para responsividad */
-        @media (min-width: 768px) {
-            .hero h1 {
-                font-size: 3rem;
+        @media (max-width: 768px) {
+            .location-hero {
+                padding: 1rem;
             }
 
-            .about-container {
-                flex-direction: row;
-                align-items: center;
+            .location-header {
+                padding: 1rem;
+                text-align: center;
             }
 
-            .about-content {
-                width: 50%;
-                padding-right: 40px;
-                margin-bottom: 0;
+            .location-highlights {
+                justify-content: center;
             }
 
-            .about-image {
-                width: 50%;
-            }
-
-            .cta-container {
-                flex-direction: row;
-                align-items: center;
-            }
-
-            .cta-content {
-                width: 50%;
-                padding-right: 40px;
-                margin-bottom: 0;
-            }
-
-            .cta-form {
-                width: 50%;
-            }
-
-            .cta-btns {
-                flex-direction: row;
-            }
-
-            .nav-links {
-                display: flex;
-                align-items: center;
-            }
-
-            .mobile-menu-btn {
+            .office-preview {
                 display: none;
             }
+
+            .location-features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .map-content {
+                flex-direction: column;
+                gap: 0;
+                text-align: center;
+            }
+
         }
 
         @media (min-width: 992px) {

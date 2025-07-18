@@ -155,22 +155,6 @@ nav {
     cursor: pointer;
 }
 
-@media (max-width:768px) {
-
-    .logo {
-        position: relative;
-        margin: 0 auto;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .mobile-menu-btn {
-        display: block;
-    }
-}
-
 /* Estilo para Call to Action */
 
 .cta {
@@ -319,4 +303,39 @@ footer {
 
 .footer-legal a:hover {
     color: var(--white);
+}
+
+@media (max-width:768px) {
+
+    .logo {
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .nav-links {
+        display: none;
+        margin-top: 2.2rem;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .cta {
+        height: 25rem;
+    }
+
+    .cta-container {
+        flex-direction: column;
+    }
+
+    .cta-content {
+        margin-bottom: 40px;
+    }
+
+    .cta-btns {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+    }
 }
